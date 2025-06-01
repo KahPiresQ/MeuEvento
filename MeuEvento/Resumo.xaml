@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MeuEvento.Resumo"
+          
+            BackgroundColor="#D5F2E3">
+
+    
+    <ScrollView>
+        <Grid>
+            <Frame BackgroundColor="White" 
+               BorderColor="#9729A1"
+               CornerRadius="10"
+               HorizontalOptions ="Center"
+               VerticalOptions="Center"
+                   >
+                <VerticalStackLayout Padding="50" Spacing="20">
+
+                
+            <Label Text="{Binding Nome}"
+                   FontSize="24"
+                   FontAttributes="Bold" 
+                   FontFamily="Georgia"
+                   TextColor="#4A0F59" 
+                   HorizontalOptions="Center"/>
+       
+
+                <Label Text="{Binding Local}"
+                       
+                  FontSize="18" 
+                  HorizontalOptions="Center"    
+                  TextColor="#4A0F59" />
+               
+        
+
+            <Label Text="{Binding DataInicio, StringFormat='Inicio: {0:dd/MM/yyyy}'}" 
+                   />
+            <Label Text="{Binding DataFim, StringFormat='Termino: {0:dd/MM/yyyy}'}" />
+            <Label Text="{Binding Duracao, StringFormat='Duracao: {0} dia(s)'}" />
+            
+            
+            <Label Text="{Binding Participantes, StringFormat='Participantes: {0}'}" />
+            <Label Text="{Binding CustoPorParticipante, StringFormat='Custo por participante: R$ {0:F2}'}" />
+            <Label Text="{Binding CustoTotal, StringFormat='Custo total do evento: R$ {0:F2}'}" />
+                    
+            <Button Text="Voltar"
+                    BackgroundColor="#9729A1"
+                    TextColor="White"
+                    Clicked="OnVoltarClicked"
+                    Margin="0,20,0,0" />
+            
+            
+        </VerticalStackLayout>
+        </Frame>
+        </Grid>
+    </ScrollView>
+</ContentPage>

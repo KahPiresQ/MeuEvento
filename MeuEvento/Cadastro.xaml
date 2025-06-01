@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MeuEvento.Cadastro"
+           
+             BackgroundColor="#D5F2E3">
+    <!-- Verde claro -->
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <!-- Título -->
+            <Label Text="Cadastro de Evento"
+                   FontSize="26"
+                   FontAttributes="Bold"
+                   FontFamily="Georgia"
+                   HorizontalOptions="Center"
+                   TextColor="#4A0F59" />
+            <!-- Roxo escuro -->
+
+            <!-- Nome do Evento -->
+            <Frame BackgroundColor="White" BorderColor="#9729A1" CornerRadius="15" Padding="10">
+                <VerticalStackLayout>
+                    <Label Text="Nome do Evento"  FontAttributes="Bold" TextColor="#4A0F59" />
+                    <Entry x:Name="nomeEventoEntry"
+                           Placeholder="Digite o nome"
+                           TextColor="#4A0F59"
+                           PlaceholderColor="#7A7A7A"
+                           BackgroundColor="White" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Período do Evento -->
+            <Frame BackgroundColor="White" BorderColor="#9729A1" CornerRadius="15" Padding="10">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="📅 Período do Evento" FontAttributes="Bold" TextColor="#4A0F59" />
+                    
+
+                    <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto" ColumnSpacing="10">
+                        <Label Text="Início:"
+                               Grid.Row="0"
+                               Grid.Column="0"
+                               TextColor="#4A0F59"
+                               VerticalOptions="Center" />
+                        <DatePicker x:Name="dataInicioPicker"
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Format="dd/MM/yyyy"
+                                    TextColor="#4A0F59"
+                                    DateSelected="OnDataInicioChanged" />
+
+                        <Label Text="Término:"
+                               Grid.Row="1"
+                               Grid.Column="0"
+                               TextColor="#4A0F59"
+                               VerticalOptions="Center" />
+                        <DatePicker x:Name="dataFimPicker"
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    Format="dd/MM/yyyy"
+                                    TextColor="#4A0F59" />
+                    </Grid>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Participantes -->
+            <Frame BackgroundColor="White" BorderColor="#9729A1" CornerRadius="15" Padding="10">
+                <VerticalStackLayout>
+                    <Label Text="Número de Participantes" FontAttributes="Bold" TextColor="#4A0F59" />
+                    <Entry x:Name="participantesEntry"
+                           Keyboard="Numeric"
+                           Placeholder="Ex: 100"
+                           TextColor="#4A0F59"
+                           PlaceholderColor="#7A7A7A"
+                           BackgroundColor="White" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Local -->
+            <Frame BackgroundColor="White" BorderColor="#9729A1" CornerRadius="15" Padding="10">
+                <VerticalStackLayout>
+                    <Label Text="Local do Evento" FontAttributes="Bold" TextColor="#4A0F59" />
+                    <Entry x:Name="localEntry"
+                           Placeholder="Digite o local"
+                           TextColor="#4A0F59"
+                           PlaceholderColor="#7A7A7A"
+                           BackgroundColor="White" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Custo -->
+            <Frame BackgroundColor="White" BorderColor="#9729A1" CornerRadius="15" Padding="10">
+                <VerticalStackLayout>
+                    <Label Text="Custo por Participante (R$)" FontAttributes="Bold" TextColor="#4A0F59" />
+                    <Entry x:Name="custoEntry"
+                           Keyboard="Numeric"
+                           Placeholder="Ex: 150.00"
+                           TextColor="#4A0F59"
+                           PlaceholderColor="#7A7A7A"
+                           BackgroundColor="White" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Botão Salvar -->
+            <Button Text="Salvar"
+                    BackgroundColor="#9729A1"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="10"
+                    Clicked="OnSalvarClicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
